@@ -2,15 +2,17 @@
 <html>
     <head>
         <title>Random Quote Generator</title>
-        <link rel="stylesheet" src="main.css">
+        <link rel="stylesheet" href="main.css">
     </head>
     
     <body>
         <div class="container">
-            <p id="quote">"Example Quote."</p>
-            <p id="author">- Someone</p>
+            <q id="quote"></q>
+            <p><cite>~<span id="author"></span>~</cite></p>
             <div class="actions">
-                <button>Twitter</button>
+                <button><a class="twitter-share-button" id="twitter" 
+  href="https://twitter.com/intent/tweet?text=Hello%20world">
+Tweet</a></button>
                 <button id="newQuote">New quote</button>
             </div>
         </div>

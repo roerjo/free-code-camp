@@ -21,8 +21,13 @@ xhr.onreadystatechange = function(e) {
 window.onload = function() {
     var newQuote = document.getElementById('newQuote');
     newQuote.addEventListener("click", function() {
-    xhr.open('GET','http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en');
-    xhr.responseType = 'json';
-    xhr.send();
+        xhr.open('GET','http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en');
+        xhr.responseType = 'json';
+        xhr.send();
     });
 }
+
+var twit = document.getElementById('twitter');
+twit.addEventListener("click", function() {
+    twit.setAttribute("href", "https://twitter.com/intent/tweet?text="+encodeURIComponent(quote.innerHTML+" "+author.innerHTML));
+});
