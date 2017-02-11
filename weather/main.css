@@ -1,0 +1,17 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+button {
+    display: inline-block;
+    margin-left: 10px;
+    border: none;
+    background-color: none;
+}
+
