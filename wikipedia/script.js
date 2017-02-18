@@ -12,10 +12,21 @@ search.addEventListener("keypress", function(e) {
 
 xhr.onreadystatechange = function(e) {
     if (e.target.readyState === 4 && e.target.status === 200) {
-        e = JSON.parse(e.target.response);
-        console.log(e);
+        res = JSON.parse(e.target.response);
+        console.log(res);
+        var list = res.query.search;
+        debugger;
+        for (var i = 0; i < list.length; i++) {
+            var box = document.createElement("DIV");
+            var p = document.createElement("P");
+            p.innerHTML = list[i].title;
+            box.appendChild(p);
+            document.getElementById("results").appendChild(box);
+        }
     }
     else {
         console.log("Error:", xhr.status);
     }
 };
+
+
