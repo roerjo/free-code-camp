@@ -6,11 +6,11 @@ var key = '9d7be2ad361191932f57bffd63ee5afe';
 var longitude, latitude, req;
 var xhr = new XMLHttpRequest();
 
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(setCity);
-    } else {
-        console.log("No location available");
-    }
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(setCity);
+} else {
+    alert("No location available");
+}
 
 function setCity(position) {
     longitude = position.coords.longitude;
@@ -20,7 +20,6 @@ function setCity(position) {
     xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?' + req + '&APPID=' + key);
     xhr.responseType = 'json';
     xhr.send();
-    
 }
 
 function kelToFar(kelvin) {
@@ -44,12 +43,10 @@ xhr.onreadystatechange = function(e) {
             var kelvin = e.target.response.main.temp;
             temp.innerHTML = Math.round(kelToFar(kelvin));    
             var img = e.target.response.weather[0].icon;
-            console.log(e);
-            console.log(img);
             icon.setAttribute('src', 'http://openweathermap.org/img/w/' + img + '.png');
         }
     } else {
-        console.log('Error: ' + xhr.status);
+        alert('Error: ' + xhr.status);
     }
 };
 
