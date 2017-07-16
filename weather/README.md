@@ -1,1 +1,1 @@
-![Alt text](/screenshots/weather.png)
+![Alt text](/weather/screenshots/weather.png)
